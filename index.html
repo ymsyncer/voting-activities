@@ -32,34 +32,119 @@
 <!--</div>-->
 <!-- Trigger the Modal -->
 <button type="button" class="button" data-reveal-id="myModal">Click To Open Modal</button>
-
-<!-- The Modal Content -->
-<div id="myModal" class="reveal-modal" data-reveal>
+<div id="myModal" class="reveal-modal full" data-reveal>
     <a class="close-reveal-modal">&times;</a>
-    <div class="message-content">
-        <h2 class="yellow title-size">填写个人信息</h2>
-        <div class="row">
-            <span class="left title-size white">姓名&nbsp;：&nbsp;</span>
-            <input class="left" type="text" style="width: 13rem;">
-        </div>
-        <div class="row">
-            <span class="left title-size white">联系电话&nbsp;：&nbsp;</span>
-            <input class="left" type="text" style="width: 18rem;">
-        </div>
-        <h2 class="yellow title-size mt1rem">填写作品信息</h2>
-        <div class="row">
-            <textarea rows="4"  style="width: 22rem;" ></textarea>
-        </div>
-    </div>
+    <img src="img/hdjs.jpg">
+    <!--<div class="row">-->
+        <!--<div class="xgqy-message" >-->
+            <!--<h1>相关权益<img src="img/jiantou.png"></h1>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--线上投票入围作品(共20名)的完整版权将转让至主办方公司(或其指定的公司),作者需协助签署《著作权转让协议》。主办方享有对相应设计方案进行再设计、生产、出版等全部权益,作者不得将此权利再次授权任何其他个人或机构。作者保留对其作品的永久署名权。</li>-->
+                <!--<li>-->
+                    <!--若主办方需对获奖作品进行进步完善或开发、设计周边产品,获奖作者需协助配合。-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--自线上投票入围作品(共20名)的著作权仍归原作者所有,主办方享有其作品的使用权,获奖设计师需协助主办方签署《著作权许可使用协议》。-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--未获奖作品版权归原作者所有,主办方不得以任停形式使用或外泄源文件。-->
+
+                <!--</li>-->
+                <!--<li>-->
+                    <!--承办单位拥有对全部参赛作品进行展示、报道、宣传及用于市场活动的权利,作者保留对其作品的署名权。主办方如需对该作品进行开发书面许可,并向作者支付相应设计费用。-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--作品一经提交,将视为参赛作者同意并遵守比赛相关规定,若作品在商业使用中其著作权存在争议,主办单位不承担因作品侵犯他人(或单位)的权利而产生的法律责任,由提供作品的参赛者承担全部法律责任。-->
+
+                <!--</li>-->
+                <!--<li>-->
+                    <!--如果获奖作者放弃履行相关版权转让或授权义务,则视为主动放弃相应奖项。-->
+
+                <!--</li>-->
+                <!--<li>-->
+                    <!--主办方对本活动保留最终解释权。-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
+<!-- The Modal Content -->
+<!--<div id="myModal" class="reveal-modal title-size" data-reveal>-->
+    <!--<a class="close-reveal-modal">&times;</a>-->
+    <!--<div class="message-content">-->
+        <!--<h3 class="yellow">填写个人信息：</h3>-->
+        <!--<div class="row">-->
+            <!--<span class="left white">姓名&nbsp;：&nbsp;</span>-->
+            <!--<input class="left" type="text" style="width: 30%;">-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<span class="left white">联系电话&nbsp;：&nbsp;</span>-->
+            <!--<input class="left" type="text" style="width: 40%;">-->
+        <!--</div>-->
+        <!--<h3 class="yellow mt1rem">填写作品信息：</h3>-->
+        <!--<div class="row">-->
+            <!--<div id="type" class="select-btn">-->
+                <!--<span>组别</span>-->
+                <!--<ul class="dropdown">-->
+                    <!--<li>潮品</li>-->
+                    <!--<img src="img/quxian.png">-->
+                    <!--<li>车品</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<textarea rows="4" class="right" placeholder="作品描述（500字以内）" style="width: 70%;" ></textarea>-->
+        <!--</div>-->
+        <!--<div class="row text-center">-->
+            <!--<button type="button" class="button radius">上传以往作品</button>-->
+        <!--</div>-->
+        <!--<div class="text-center">-->
+            <!--<button type="button" class="button radius mr1rem">确认</button>-->
+            <!--<button type="button" class="button radius ml1rem">返回</button>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="message-success">-->
+        <!--<img src="img/success.png">-->
+        <!--<p class="title-size yellow">上传成功，等待审核中......</p>-->
+        <!--<img src="img/error.png">-->
+        <!--<p class="title-size yellow">上传失败，请重新选择</p>-->
+    <!--</div>-->
+<!--</div>-->
 
 <script src="js/jquery.min.js"></script>
 <script src="js/foundation.min.js"></script>
 <script src="js/modernizr.js"></script>
 <script>
     $(document).ready(function() {
-        $(document).foundation();
+        $(document).foundation({
+            reveal: {
+                close_on_background_click: false,
+                close_on_esc: false
+            }
+        });
     })
+    function DropDown(el) {
+        this.dd   = el;
+        this.span = this.dd.children('span');
+        this.li   = this.dd.find('ul.dropdown li');
+        this.val  = '';
+    }
+    DropDown.prototype.initEvents = function() {
+        var obj = this;
+        obj.dd.on('click', function(event){
+            $(this).toggleClass('active').siblings().removeClass('active');
+            event.stopPropagation();
+        });
+        obj.li.on('click', function() {
+            var opt = $(this);
+            obj.val = opt.html();
+            if (obj.span.html() == obj.val) return;
+            obj.span.html(obj.val);
+            $(document).click(function() {
+                $('.select-btn').removeClass('active');
+            });
+        })
+    }
+    new DropDown($('#type')).initEvents();
 </script>
 </body>
 </html>

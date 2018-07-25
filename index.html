@@ -6,9 +6,60 @@
     <title>首页</title>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<!--<div style="min-width:1000px;background: url('img/bg.jpg') no-repeat;background-size: contain;width: 100%;height: 8584px;">-->
+    <!--<div class="row">-->
+        <!--<div class="large-4 small-4 columns">-->
+            <!--<img src="img/logo.png">-->
+        <!--</div>-->
+        <!--<div class="large-2 small-2 columns">-->
+            <!--<img src="img/logo1.png" style="margin-top: 4rem;">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="activity-btn">-->
+        <!--<div class="row">-->
+            <!--<img src="img/wybm.png" class="right img1">-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<img src="img/wytp.png" class="right img2">-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<img src="img/hdjs.png" class="right img3">-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!-- Trigger the Modal -->
+<button type="button" class="button" data-reveal-id="myModal">Click To Open Modal</button>
 
+<!-- The Modal Content -->
+<div id="myModal" class="reveal-modal" data-reveal>
+    <a class="close-reveal-modal">&times;</a>
+    <div class="message-content">
+        <h2 class="yellow title-size">填写个人信息</h2>
+        <div class="row">
+            <span class="left title-size white">姓名&nbsp;：&nbsp;</span>
+            <input class="left" type="text" style="width: 13rem;">
+        </div>
+        <div class="row">
+            <span class="left title-size white">联系电话&nbsp;：&nbsp;</span>
+            <input class="left" type="text" style="width: 18rem;">
+        </div>
+        <h2 class="yellow title-size mt1rem">填写作品信息</h2>
+        <div class="row">
+            <textarea rows="4"  style="width: 22rem;" ></textarea>
+        </div>
+    </div>
+</div>
 
+<script src="js/jquery.min.js"></script>
+<script src="js/foundation.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script>
+    $(document).ready(function() {
+        $(document).foundation();
+    })
+</script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+/*声明 WebFont*/
+@font-face {
+    font-family: 'HYYaKuHeiJ';
+    src: url('font/HYYaKuHeiJ.eot'); /* IE9 Compat Modes */
+    src: url('font/HYYaKuHeiJ.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('font/HYYaKuHeiJ.woff') format('woff'), /* Modern Browsers */
+    url('font/HYYaKuHeiJ.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('font/HYYaKuHeiJ.svg#YourWebFontName') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+body, h1, h2, h3, h4, h5, h6, button, .button{
+    font-family: HYYaKuHeiJ;
+}
+.reveal-modal{
+    background:rgba(0,0,0,0.45);
+    border: none;
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea{
+    border:0.13rem solid #f8b100;
+    border-style: dashed;
+    border-radius: 0.3rem;
+}
+.activity-btn{
+    margin-top: 1300px;
+}
+.activity-btn img{
+    width: 306px;
+    height: 88px;
+}
+.img1{
+     margin:20px 7%;
+ }
+.img2{
+    margin:20px 9%;
+}
+.img3{
+    margin:20px 11%;
+}
+.yellow{
+    color: #f8b100;
+}
+.white{
+    color: white;
+}
+.title-size{
+    font-size: 1.7rem;
+    font-style: oblique;
+}
+.message-content .row{
+    margin: 1rem auto;
+}
+.mt1rem{
+    margin-top: 1rem;
+}

@@ -200,6 +200,16 @@ ul li{
 .message-success{
     text-align: center;
     padding: 10rem 0;
+    background: #000;
+    background: rgba(0,0,0,0.45);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1004;
+    left: 0;
 }
 .message-success{
     height: 31rem;
@@ -224,4 +234,99 @@ ul li{
     font-family: hyg1gjm;
     font-style: normal;
     color: white;
+}
+/*参赛活动*/
+.circle-content{
+    width:100%;
+    font-style: normal;
+}
+.circle-content-csxz{
+    background: url('../img/csxz.png') no-repeat;
+    background-size: cover;
+    height: 73rem;
+    padding: 7rem 0;
+    margin: 5rem 0;
+}
+.circle-content ul{
+    list-style: none;
+}
+.circle-content li{
+    font-size: 1.1rem;
+    font-family: HYg1gj;
+    color: white;
+    padding: 1rem 0;
+}
+.circle-content li div{
+    width: 1.5rem;
+    text-align: center;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 100%;
+    background: #f8b100;
+    margin-right: 1.5rem;
+    float: left;
+}
+.circle-content li span{
+    float: left;
+    display: block;
+    width: 75%;
+}
+.circle-content-xgqy{
+    background: url('../img/xgqy.png') no-repeat;
+    background-size: cover;
+    padding-top: 15rem;
+    margin: 5rem 0;
+}
+.circle-content-xgqy li div{
+    margin-left: 15%;
+}
+.circle-content-xgqy li span{
+    float: right;
+    margin-right: 5%;
+}
+.hjtz-content{
+    background: url('../img/hjtz.png') no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 32rem;
+    padding-top: 14rem;
+    text-align: center;
+}
+.hjtz-content>p{
+    font-size: 1.5rem;
+    color: white;
+}
+.cssm-bg{
+    margin-top: 10rem;
+    background: url('../img/shuoming.png') no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 35rem;
+}
+.pxbz-bg{
+    background: url('../img/biaozhun.png') no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 33rem;
+}
+.sjds-bg{
+    margin-top: 10rem;
+    background: url('../img/shejidasai.png') no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 50rem;
+}
+.jxsz-bg{
+    margin-top: 10rem;
+    background: url('../img/jiangxiangshezhi.png') no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 76rem;
+}
+.cpjs-bg{
+    margin-top: 10rem;
+    background: url('../img/chanpinjieshao.png') no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 76rem;
 }

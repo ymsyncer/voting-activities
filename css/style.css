@@ -235,12 +235,37 @@ ul li{
     color: white;
 }
 /*投票*/
+.modal-size{
+    min-width:50rem;
+}
 .vote-content{
     padding:0 2rem;
     text-align: center;
+    color: #f8b100;
 }
 .vote-content h1{
     color: #f8b100;
+}
+.vote-content li{
+    float: left;
+    position: relative;
+    width: 50%;
+}
+.vote-top{
+    position: absolute;
+    top: -4.5rem;
+    left: 4rem;
+}
+.vote-top img{
+    width: 5rem;
+    height: 5rem;
+}
+.vote-box{
+    width: 80%;
+    height: 10rem;
+    border:1px solid #f8b100;
+    border-style: dashed;
+    margin: 0 auto;
 }
 /*参赛活动*/
 .circle-content{

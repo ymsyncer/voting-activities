@@ -12,6 +12,26 @@ body, h1, h2, h3, h4, h5, h6, button, .button{
     font-family: HYYaKuHeiJ;
     font-style: oblique;
 }
+/*webkit滚动条*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8b100;
+    border-radius: 1000px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f8b100;
+    border-radius: 2px;
+}
+
 @font-face {
     font-family: 'hyg1gjm';
     src: url('font/hyg1gjm.eot'); /* IE9 Compat Modes */
@@ -213,6 +233,14 @@ ul li{
     font-family: hyg1gjm;
     font-style: normal;
     color: white;
+}
+/*投票*/
+.vote-content{
+    padding:0 2rem;
+    text-align: center;
+}
+.vote-content h1{
+    color: #f8b100;
 }
 /*参赛活动*/
 .circle-content{

@@ -4,43 +4,70 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
     <title>首页</title>
+    <link rel="stylesheet" href="css/webuploader.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-<!--<div style="min-width:1000px;background: url('img/ditu.jpg') no-repeat;background-size: contain;width: 100%;height: 8584px;">-->
-    <!--<div class="row">-->
-        <!--<div class="large-4 small-4 columns">-->
-            <!--<img src="img/logo.png">-->
-        <!--</div>-->
-        <!--<div class="large-2 small-2 columns">-->
-            <!--<img src="img/logo1.png" style="margin-top: 4rem;">-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-        <!--<div class="sjds-bg"></div>-->
-        <!--<div class="medium-offset-1 medium-10 columns end">-->
-            <!--<div class="jxsz-bg"></div>-->
-            <!--<div class="cpjs-bg"></div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;<div class="activity-btn">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;<img src="img/wybm.png" class="right img1">&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;<img src="img/wytp.png" class="right img2">&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;<img src="img/hdjs.png" class="right img3">&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-<!--</div>-->
-
+<body style="background: black;overflow-x: hidden;">
+<div class="content">
+    <a href="javascript:void(0)" id="signUp" class="btns wybm"></a>
+    <a href="javascript:void(0)" class="btns wytp"></a>
+    <a href="javascript:void(0)" data-reveal-id="subModal"  class="btns hdjs"></a>
+    <a href="https://www.dongfeng-nissan.com.cn/car/lannia" class="ljgd"></a>
+    <div class="rdb">
+        <div class="rdb-bg">
+            <div class="clearfix">
+                <ul class="rdb-left">
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                </ul>
+                <ul class="rdb-right">
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="left">16号作品</span>
+                        <span class="right">128239票</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <!--活动介绍-->
-<button type="button" class="button" data-reveal-id="myModal">Click To Open Modal</button>
-<div id="myModal1" class="reveal-modal full" data-reveal>
+<div id="subModal" class="reveal-modal full" data-reveal>
     <a class="close-reveal-modal">&times;</a>
     <div style="background: url('img/hdjs.jpg') no-repeat;background-size: cover;width: 100%;min-width:1000px;">
         <div class="row">
@@ -185,47 +212,52 @@
     </div>
 </div>
 <!--表单-->
-<div id="myModal" class="reveal-modal title-size" data-reveal>
+<div id="formModal" class="reveal-modal reveal-modals title-size"  data-reveal >
     <a class="close-reveal-modal">&times;</a>
-    <div class="message-content">
-        <h3 class="yellow">填写个人信息：</h3>
-        <div class="row">
-            <span class="left white">姓名&nbsp;：&nbsp;</span>
-            <input class="left" id="name" type="text" style="width: 30%;">
-        </div>
-        <div class="row">
-            <span class="left white">联系电话&nbsp;：&nbsp;</span>
-            <input class="left" id="number" type="text" style="width: 40%;">
-        </div>
-        <h3 class="yellow mt1rem">填写作品信息：</h3>
-        <div class="row">
-            <span class="left white">作品名称&nbsp;：&nbsp;</span>
-            <input class="left" id="title" type="text" style="width: 40%;">
-        </div>
-        <div class="row">
-            <div id="type" class="select-btn">
-                <span>组别</span>
-                <ul class="dropdown">
-                    <li>潮品</li>
-                    <img src="img/quxian.png">
-                    <li>车品</li>
-                </ul>
+    <div  class="message-content">
+        <div id="messageContent">
+            <h3 class="yellow">填写个人信息：</h3>
+            <div class="row">
+                <span class="left white">姓名&nbsp;：&nbsp;</span>
+                <input class="left" id="name" type="text" style="width: 30%;">
             </div>
-            <textarea rows="4" id="details" class="right" placeholder="作品描述（500字以内）" style="width: 70%;" ></textarea>
+            <div class="row">
+                <span class="left white">联系电话&nbsp;：&nbsp;</span>
+                <input class="left" id="number" type="text" style="width: 40%;">
+            </div>
+            <h3 class="yellow mt1rem">填写作品信息：</h3>
+            <div class="row">
+                <span class="left white">作品名称&nbsp;：&nbsp;</span>
+                <input class="left" id="title" type="text" style="width: 40%;">
+            </div>
+            <div class="row">
+                <div id="type" class="select-btn">
+                    <span>组别</span>
+                    <ul class="dropdown">
+                        <li>潮品</li>
+                        <img src="img/quxian.png">
+                        <li>车品</li>
+                    </ul>
+                </div>
+                <textarea rows="4" id="details" class="right" placeholder="作品描述（500字以内）" style="width: 70%;" ></textarea>
+            </div>
+            <div class="uploader">
+                <div id="filePicker">上传以往作品</div>
+            </div>
+
+            <div class="text-center">
+                <button type="button" id="submit" class="button radius mr1rem">确认</button>
+                <button type="button" id="back" class="button radius ml1rem">返回</button>
+            </div>
         </div>
-        <div class="row text-center">
-            <button id="filePicker" type="button" class="button radius">上传以往作品</button>
+        <div id="successMessage" class="message-success">
+            <img src="img/success.png">
+            <p class="title-size yellow">上传成功，等待审核中......</p>
         </div>
-        <div class="text-center">
-            <button type="button" id="submit" class="button radius mr1rem">确认</button>
-            <button type="button" id="back" class="button radius ml1rem">返回</button>
+        <div id="errorMessage" class="message-success">
+            <img src="img/error.png">
+            <p class="title-size yellow">上传失败，请重新选择</p>
         </div>
-    </div>
-    <div class="message-success">
-        <img src="img/success.png">
-        <p class="title-size yellow">上传成功，等待审核中......</p>
-        <img src="img/error.png">
-        <p class="title-size yellow">上传失败，请重新选择</p>
     </div>
 </div>
 
@@ -272,44 +304,18 @@
                 mimeTypes: 'image/*'
             }
         });
-        // // 当有文件添加进来的时候
-        // uploader.on('fileQueued', function (file) {
-        //     var $li = $(
-        //         '<div id="' + file.id + '" class="file-item thumbnail">' +
-        //         '<img>' +
-        //         '<div class="info">' + file.name + '</div>' +
-        //         '</div>'
-        //         ),
-        //         $img = $li.find('img');
-        //
-        //     $list.append($li);
-        //
-        //     // 创建缩略图
-        //     uploader.makeThumb(file, function (error, src) {
-        //         if (error) {
-        //             $img.replaceWith('<span>不能预览</span>');
-        //             return;
-        //         }
-        //
-        //         $img.attr('src', src);
-        //     }, thumbnailWidth, thumbnailHeight);
-        // });
-
         // 文件上传过程中创建进度条实时显示。
         uploader.on('uploadProgress', function (file, percentage) {
-
+            alert("作品正在上传")
         });
         // 文件上传成功
         uploader.on('uploadSuccess', function (file, response) {
-            photo=imgUrl+response._raw
+            photo=imgUrl+response._raw;
+            alert("作品上传成功")
         });
         // 文件上传失败，现实上传出错。
         uploader.on('uploadError', function (file) {
-
-        });
-        // 完成上传完了，成功或者失败，先删除进度条。
-        uploader.on('uploadComplete', function (file) {
-
+            alert("作品上传失败")
         });
     });
     // 下拉
@@ -367,7 +373,6 @@
             alert("作品描述不能为空")
             return
         }
-
         $.ajax({
             type:'get',
             url:baseUrl+"rest/list",
@@ -381,12 +386,17 @@
             cache:false,
             dataType:'json',
             success:function(data){
-                alert("保存成功");
+                $("#successMessage").show();
+                $("#messageContent").hide();
             },
             error:function (error) {
-                alert("保存失败")
+                $("#ErrorMessage").show();
+                $("#messageContent").hide();
             }
         });
+    })
+    $("#signUp").click(function () {
+      $('#formModal').foundation('reveal', 'open');
     })
 </script>
 </body>

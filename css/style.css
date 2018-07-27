@@ -23,12 +23,12 @@ body, h1, h2, h3, h4, h5, h6, button, .button{
     font-style: normal;
 }
 .reveal-modal{
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.8);
     border: none;
     outline: none;
 }
 @media only screen and (min-width: 40.0625em){
-    .reveal-modal{
+    .reveal-modals{
         max-width: 43.5rem;
     }
 }
@@ -62,22 +62,6 @@ button:hover, button:focus, .button:hover, .button:focus{
     background: none;
     color:#f8b100;
 }
-.activity-btn{
-    margin-top: 1300px;
-}
-.activity-btn img{
-    width: 306px;
-    height: 88px;
-}
-.img1{
-     margin:20px 7%;
- }
-.img2{
-    margin:20px 9%;
-}
-.img3{
-    margin:20px 11%;
-}
 .yellow{
     color: #f8b100;
 }
@@ -92,8 +76,14 @@ button:hover, button:focus, .button:hover, .button:focus{
         font-size: 1rem;
     }
 }
+.uploader{
+    width: 12rem;
+    margin: 1rem auto;
+    position: relative;
+}
 .message-content{
     padding:0 2rem;
+    display: block;
 }
 .message-content .row{
     margin: 1rem auto;
@@ -199,23 +189,12 @@ ul li{
 }
 .message-success{
     text-align: center;
-    padding: 10rem 0;
-    background: #000;
-    background: rgba(0,0,0,0.45);
-    bottom: 0;
+    height: 40rem;
     display: none;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 1004;
-    left: 0;
-}
-.message-success{
-    height: 31rem;
 }
 .message-success>img{
     width: 15%;
+    margin-top: 13rem;
     margin-bottom: 2rem;
 }
 .xgqy-message{
@@ -296,37 +275,398 @@ ul li{
     font-size: 1.5rem;
     color: white;
 }
-.cssm-bg{
-    margin-top: 10rem;
-    background: url('../img/shuoming.png') no-repeat;
-    background-size: cover;
-    width:100%;
-    height: 35rem;
+.mt5rem{
+    margin: 5rem auto;
 }
-.pxbz-bg{
-    background: url('../img/biaozhun.png') no-repeat;
+.content{
+    background:url('../img/bg.jpg') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    width:100%;
-    height: 33rem;
+    margin: 0 auto;
+    position: relative;
 }
-.sjds-bg{
-    margin-top: 10rem;
-    background: url('../img/shejidasai.png') no-repeat;
-    background-size: cover;
-    width:100%;
-    height: 50rem;
+.btns{
+    display: block;
+    width: 13rem;
+    height: 5rem;
+    position: absolute;
+    background: red;
+    top: 75rem;
 }
-.jxsz-bg{
-    margin-top: 10rem;
-    background: url('../img/jiangxiangshezhi.png') no-repeat;
-    background-size: cover;
-    width:100%;
-    height: 76rem;
+.wybm{
+    right: 39rem;
 }
-.cpjs-bg{
-    margin-top: 10rem;
-    background: url('../img/chanpinjieshao.png') no-repeat;
+.wytp{
+    right: 25rem;
+}
+.hdjs{
+    right: 39rem;
+}
+.ljgd{
+    display: block;
+    width: 7rem;
+    height: 5rem;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 2.5rem;
+}
+.rdb{
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+}
+.rdb-bg{
+    width: 80%;
+    margin:0 auto;
+    position: relative;
+    background:url('../img/rdb.png') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    width:100%;
-    height: 76rem;
+}
+.rdb-left{
+    float: left;
+    width: 29%;
+    margin-left: 9%;
+}
+.rdb-right{
+    float: left;
+    width: 28%;
+    margin-left: 23%;
+}
+.rdb-bg li{
+    color:#f8b100 ;
+    font-family: HYYaKuHeiJ;
+    font-style: oblique;
+    font-size: 1.5rem;
+}
+@media only screen and (max-width: 415px){
+    .content{
+        background:url('../img/bg-mobile.jpg') no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .rdb-bg{
+        background:url('../img/redubang-mobile.png') no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 359px){
+
+}
+@media only screen and (min-width: 360px) and (max-width: 374px){
+
+}
+@media only screen and (min-width: 375px) and (max-width: 413px){
+    .content{
+        width: 26rem;
+        height: 143rem;
+    }
+    .btns{
+        width: 5.5rem;
+        height: 1.5rem;
+        top: 31.5rem;
+    }
+    .wybm{
+        right: 16rem;
+    }
+    .wytp{
+        right: 10rem;
+    }
+    .hdjs{
+        right: 4rem;
+    }
+    .ljgd{
+        width: 3rem;
+        height: 2rem;
+        background: red;
+        bottom: 15rem;
+        right: 3.5rem;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 2rem;
+    }
+    .rdb-bg{
+        height: 10.4rem;
+        padding-top: 2rem;
+    }
+}
+@media only screen and (min-width: 414px) and (max-width: 415px){
+    .content{
+        width: 26rem;
+        height: 143rem;
+    }
+    .btns{
+        width: 5.5rem;
+        height: 1.5rem;
+        top: 31.5rem;
+    }
+    .wybm{
+        right: 16rem;
+    }
+    .wytp{
+        right: 10rem;
+    }
+    .hdjs{
+        right: 4rem;
+    }
+    .ljgd{
+        width: 3rem;
+        height: 2rem;
+        background: red;
+        bottom: 15rem;
+        right: 3.5rem;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 2rem;
+    }
+    .rdb-bg{
+        height: 10.4rem;
+        padding-top: 2rem;
+    }
+}
+@media only screen and (min-width: 415px) {
+    .content{
+        background:url('../img/bg.jpg') no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .rdb-bg{
+        background:url('../img/rdb.png') no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+@media only screen and (min-width: 415px) and (max-width: 1279px){
+    .content{
+        width: 64rem;
+        height: 354rem;
+    }
+    .btns{
+        width: 13rem;
+        height: 4rem;
+        top: 77.5rem;
+    }
+    .wybm{
+        right: 40rem;
+    }
+    .wytp{
+        right: 26rem;
+    }
+    .hdjs{
+        right: 11rem;
+    }
+    .ljgd{
+        width: 8rem;
+        height: 5rem;
+        background: red;
+        bottom: 39rem;
+        right: 9rem;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 6rem;
+    }
+    .rdb-bg{
+        height: 25.6rem;
+        padding-top: 12rem;
+    }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+    .content{
+        width: 80rem;
+        height: 443rem;
+    }
+    .btns{
+        width: 17rem;
+        height: 5rem;
+        top: 97rem;
+    }
+    .wybm{
+        right: 50rem;
+    }
+    .wytp{
+        right: 32rem;
+    }
+    .hdjs{
+        right: 13rem;
+    }
+    .ljgd{
+        width: 9rem;
+        height: 6rem;
+        background: red;
+        bottom: 49rem;
+        right: 11rem;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 12rem;
+    }
+    .rdb-bg{
+        height: 32rem;
+        padding-top: 18rem;
+    }
+}
+@media only screen and (min-width: 1366px) and (max-width: 1439px) {
+    .content{
+        width: 86rem;
+        height: 476rem;
+    }
+    .btns{
+        width: 18rem;
+        height: 5.5rem;
+        top: 104rem;
+    }
+    .wybm{
+        right: 54rem;
+    }
+    .wytp{
+        right: 34rem;
+    }
+    .hdjs{
+        right: 14rem;
+    }
+    .ljgd{
+        width: 9rem;
+        height: 7rem;
+        background: red;
+        bottom: 52rem;
+        right: 12rem;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 12rem;
+    }
+    .rdb-bg{
+        height: 34.4rem;
+        padding-top: 18rem;
+    }
+}
+@media only screen and (min-width: 1440px) and (max-width: 1679px){
+    .content{
+        width: 90rem;
+        height: 498rem;
+    }
+    .btns{
+        width: 18rem;
+        height: 5.5rem;
+        top: 109rem;
+    }
+    .wybm{
+        right: 57rem;
+    }
+    .wytp{
+        right: 36rem;
+    }
+    .hdjs{
+        right: 15rem;
+    }
+    .ljgd{
+        width: 9rem;
+        height: 6.5rem;
+        background: red;
+        bottom: 55rem;
+        right: 13rem;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 12rem;
+    }
+    .rdb-bg{
+        height: 36rem;
+        padding-top: 18rem;
+    }
+}
+@media only screen and (min-width: 1680px) and (max-width: 1919px) {
+    .content{
+        width: 105rem;
+        height: 580rem;
+    }
+    .btns{
+        width: 21rem;
+        height: 6.5rem;
+        top: 127rem;
+    }
+    .wybm{
+        right: 66rem;
+    }
+    .wytp{
+        right: 42rem;
+    }
+    .hdjs{
+        right: 18rem;
+    }
+    .ljgd{
+        width: 11rem;
+        height: 8rem;
+        background: red;
+        bottom: 63rem;
+        right: 15rem;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 12rem;
+    }
+    .rdb-bg{
+        height: 42rem;
+        padding-top: 22rem;
+    }
+}
+@media only screen and (min-width: 1920px){
+    .content{
+        width:120rem;
+        height: 665rem;
+    }
+    .btns{
+        width:24rem;
+        height: 8rem;
+        top: 145rem;
+    }
+    .wybm{
+        right: 76rem;
+    }
+    .wytp{
+        right: 48rem;
+    }
+    .hdjs{
+        right: 20rem;
+    }
+    .ljgd{
+        width: 13rem;
+        height: 10rem;
+        background: red;
+        bottom: 73rem;
+        right: 17rem;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 12rem;
+    }
+    .rdb-bg{
+        height: 48rem;
+        padding-top: 25rem;
+    }
 }

@@ -1,0 +1,236 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head >
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
+    <title>首页</title>
+    <link rel="stylesheet" href="css/webuploader.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body style="background: rgba(0,0,0,0.8);">
+<div class="vote-content">
+    <div class="closeBtn" id="closeAll">X</div>
+    <div class="row">
+        <div class="medium-6 columns">
+            <h1>潮品组</h1>
+            <ul id="tide">
+
+            </ul>
+        </div>
+        <div class="medium-6 columns">
+            <h1>车品组</h1>
+            <ul id="cars">
+
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!--表单-->
+<div id="formModal" class="reveal-modal reveal-modals title-size"  data-reveal >
+    <a class="close-reveal-modal">&times;</a>
+    <div  class="message-content">
+        <div id="messageContent">
+            <div class="row">
+                <span class="left white">联系电话&nbsp;：&nbsp;</span>
+                <input class="left" id="number" type="number" style="width: 40%;">
+            </div>
+            <div class="row">
+                <span class="left white">验证码&nbsp;：&nbsp;</span>
+                <input class="left" id="code"  type="text" style="width: 20%;margin-right: 1rem;">
+                <input type="button" class=" small-btn" value=" 获取验证码"  id="codeBtn" onclick="settime(this);">
+            </div>
+            <div class="text-center">
+                <button type="button" id="submit" class="button radius mr1rem">确认</button>
+                <button type="button" id="back" class="button radius ml1rem">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--投票-->
+<div id="voteModal" class="reveal-modal reveal-modals large title-size modal-size"  data-reveal >
+    <a class="close-reveal-modal">&times;</a>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/foundation.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/webuploader.min.js"></script>
+<script>
+  var baseUrl="http://www.1roadshow.com/api/";
+  getList();
+  function getList(){
+    $.ajax({
+      type:'get',
+      url:baseUrl+"rest/list",
+      cache:false,
+      dataType:'json',
+      success:function(data){
+        if (!data.success) {
+          alert(data.errors[0])
+          return
+        }
+        if (data.tide.length == 0 && data.car.length == 0) {
+          alert("暂无数据")
+        }
+        var tides = data.tide;
+        for(var i = 0; i<tides.length; i++){
+            var industry = tides[i];
+            var tideNum=i+1;
+            var li = "<li><img class='vote-img' src="+industry.photo+"/><div class='vote-title'> <p>"+tideNum+"号作品</p><h2>"+industry.title+"</h2><p>"+"作者："+industry.name+"</p></div><div class='vote-box'>"+industry.details+"</div><div class='text-center'> <button userid="+industry.userid+" signupid="+industry.signupid+" id='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
+            $("#tide").append(li);
+          }
+        var cars = data.car;
+        for(var i = 0; i<cars.length; i++){
+          var industrys = cars[i];
+          var cartNum=i+1;
+          var li = "<li><img class='vote-img' src="+industrys.photo+"/><div class='vote-title'> <p>"+cartNum+"号作品</p><h2>"+industrys.title+"</h2><p>"+"作者："+industrys.name+"</p></div><div class='vote-box'>"+industrys.details+"</div><div class='text-center'> <button userid="+industrys.userid+" signupid="+industrys.signupid+" id='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
+          $("#cars").append(li);
+        }
+      },
+      error:function (error) {
+
+      }
+    });
+  }
+  $(document).ready(function() {
+    $(document).foundation({
+      reveal: {
+        close_on_background_click: false,
+        close_on_esc: false
+      }
+    });
+  })
+  $(document).on("click", "#voteBtn", function () {
+    $('#formModal').foundation('reveal', 'open');
+  });
+
+  // 提交
+  $("#submit").click(function () {
+    var number=$("#number").val();
+    var code=$("#code").val();
+    var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+    if(!myreg.test(number))
+    {
+      alert('请输入有效的手机号码！');
+    }
+    if (code == ""||code==undefined) {
+      alert("验证码不能为空")
+      return
+    }
+    var signupid=$("#voteBtn").attr("signupid");
+    var userid=$("#voteBtn").attr("userid")
+    $.ajax({
+      type:'post',
+      url:baseUrl+"rest/vote",
+      data:{
+        userid:userid,
+        number:number,
+        signupid:signupid,
+        code:code,
+        d3:"1",
+        d3Type:"1",
+        type:2
+      },
+      cache:false,
+      dataType:'json',
+      success:function(data){
+        if (!data.success) {
+          alert(data.errors[0])
+          return
+        }
+       alert("投票成功");
+        $('#formModal').foundation('reveal', 'close');
+
+      },
+      error:function () {
+        alert("投票失败，请重新投票");
+        $('#formModal').foundation('reveal', 'close');
+      }
+    });
+  })
+  // 下拉
+  function DropDown(el) {
+    this.dd   = el;
+    this.span = this.dd.children('span');
+    this.li   = this.dd.find('ul.dropdown li');
+    this.val  = '';
+  }
+  DropDown.prototype.initEvents = function() {
+    var obj = this;
+    obj.dd.on('click', function(event){
+      $(this).toggleClass('active').siblings().removeClass('active');
+      event.stopPropagation();
+    });
+    obj.li.on('click', function() {
+      var opt = $(this);
+      obj.val = opt.html();
+      if (obj.span.html() == obj.val) return;
+      obj.span.html(obj.val);
+      groups=obj.val;
+      $(document).click(function() {
+        $('.select-btn').removeClass('active');
+      });
+    })
+  }
+  new DropDown($('#type')).initEvents();
+  $("#codeBtn").click(function () {
+    var mobile=$("#number").val()
+    if (mobile == ""||mobile==undefined) {
+      alert("请输入手机号")
+      return
+    }
+    var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+    if(!myreg.test(mobile))
+    {
+      alert('请输入有效的手机号码！');
+      return
+    }
+    $.ajax({
+      type:'get',
+      url:baseUrl+"sms/send/"+mobile+"/"+"2",
+      cache:false,
+      dataType:'json',
+      success:function(data){
+
+      }
+    });
+  })
+  //倒计时
+  var countdown=60;
+  function settime(val) {
+    var mobile=$("#number").val()
+    if (mobile == ""||mobile==undefined) {
+      return
+    }
+    var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+    if(!myreg.test(mobile))
+    {
+      return
+    }
+    if (countdown == 0) {
+      val.removeAttribute("disabled");
+      val.value="获取验证码";
+      countdown = 60;
+      return false;
+    } else {
+      val.setAttribute("disabled", true);
+      val.value="重新发送(" + countdown + ")";
+      countdown--;
+    }
+    setTimeout(function() {
+      settime(val);
+    },1000);
+  }
+  $("#back").click(function () {
+    $('#formModal').foundation('reveal', 'close');
+  })
+  $("#closeAll").click(function () {
+    location.href="index.html"
+  })
+
+</script>
+</body>
+</html>

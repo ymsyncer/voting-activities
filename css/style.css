@@ -12,14 +12,25 @@ body, h1, h2, h3, h4, h5, h6, button, .button{
     font-family: HYYaKuHeiJ;
     font-style: oblique;
 }
+.closeBtn{
+    color: #aaa;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    font-size: 3rem;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-style: normal;
+}
 /*webkit滚动条*/
-
 ::-webkit-scrollbar {
     width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f8b100;
+    background: rgba(0,0,0,0.8);
     border-radius: 1000px;
 }
 
@@ -81,6 +92,15 @@ button, .button{
 button:hover, button:focus, .button:hover, .button:focus{
     background: none;
     color:#f8b100;
+}
+.small-btn{
+    padding: 0.3rem 1rem;
+    float: left;
+    border: 1px solid #f8b100;
+    border-style: dashed;
+    background: none;
+    color: #f8b100;
+    font-size: 1rem;
 }
 .yellow{
     color: #f8b100;
@@ -217,116 +237,65 @@ ul li{
     margin-top: 13rem;
     margin-bottom: 2rem;
 }
-.xgqy-message{
-    background: url(../img/kuang1.png) no-repeat;
-    width:100%;
-    background-size: cover;
-}
-.xgqy-message h1{
-    color:#f8b100 ;
-}
-.xgqy-message img{
-    width: 1.5rem;
-    margin-left: 1rem;
-}
-.xgqy-message li{
-    font-family: hyg1gjm;
-    font-style: normal;
-    color: white;
-}
 /*投票*/
 .modal-size{
     min-width:50rem;
+    height: 50rem;
+    overflow: auto;
 }
 .vote-content{
     padding:0 2rem;
-    text-align: center;
     color: #f8b100;
 }
 .vote-content h1{
+    text-align: center;
+    margin: 5rem auto 10rem;
     color: #f8b100;
 }
 .vote-content li{
-    float: left;
     position: relative;
-    width: 50%;
+    width: 100%;
 }
-.vote-top{
+.vote-img{
     position: absolute;
-    top: -4.5rem;
+    width: 7rem;
+    height: 7rem;
+    top: -6rem;
     left: 4rem;
 }
-.vote-top img{
-    width: 5rem;
-    height: 5rem;
+.vote-title{
+    position: absolute;
+    height: 6rem;
+    left: 12rem;
+    width: 60%;
+    color: #f8b100;
+    top: -5.5rem;
+}
+.vote-title p{
+    font-family: HYYaKuHeiJ;
+    font-size: 1rem;
+    margin: 0;
+}
+.vote-title h2{
+    color: #f8b100;
+    margin: 0;
+    font-family: HYg1gj;
+    font-size: 1.2rem;
 }
 .vote-box{
-    width: 80%;
-    height: 10rem;
+    font-family:HYg1gj ;
+    font-size: 1rem;
+    padding: 2rem 1rem;
+    min-height: 10rem;
+    width: 100%;
     border:1px solid #f8b100;
     border-style: dashed;
     margin: 0 auto;
 }
-/*参赛活动*/
-.circle-content{
-    width:100%;
-    font-style: normal;
-}
-.circle-content-csxz{
-    background: url('../img/csxz.png') no-repeat;
-    background-size: cover;
-    height: 73rem;
-    padding: 7rem 0;
-    margin: 5rem 0;
-}
-.circle-content ul{
-    list-style: none;
-}
-.circle-content li{
-    font-size: 1.1rem;
-    font-family: HYg1gj;
-    color: white;
-    padding: 1rem 0;
-}
-.circle-content li div{
-    width: 1.5rem;
-    text-align: center;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    border-radius: 100%;
+.vote-btn{
     background: #f8b100;
-    margin-right: 1.5rem;
-    float: left;
-}
-.circle-content li span{
-    float: left;
-    display: block;
-    width: 75%;
-}
-.circle-content-xgqy{
-    background: url('../img/xgqy.png') no-repeat;
-    background-size: cover;
-    padding-top: 15rem;
-    margin: 5rem 0;
-}
-.circle-content-xgqy li div{
-    margin-left: 15%;
-}
-.circle-content-xgqy li span{
-    float: right;
-    margin-right: 5%;
-}
-.hjtz-content{
-    background: url('../img/hjtz.png') no-repeat;
-    background-size: cover;
-    width:100%;
-    height: 32rem;
-    padding-top: 14rem;
-    text-align: center;
-}
-.hjtz-content>p{
-    font-size: 1.5rem;
-    color: white;
+    color: black;
+    margin: 2rem 0 10rem;
 }
 .mt5rem{
     margin: 5rem auto;
@@ -345,7 +314,6 @@ ul li{
     width: 13rem;
     height: 5rem;
     position: absolute;
-    background: red;
     top: 75rem;
 }
 .wybm{
@@ -396,7 +364,69 @@ ul li{
     font-style: oblique;
     font-size: 1.5rem;
 }
+.hdjs-bg{
+    background: url(../img/pc.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 195rem;
+}
 @media only screen and (max-width: 415px){
+    .vote-img {
+        width: 4rem;
+        height: 4rem;
+        top: -3.5rem;
+        left: 1rem;
+    }
+    .vote-title {
+        height: 6rem;
+        left: 6rem;
+        top: -4rem;
+    }
+    .vote-title p,.vote-box{
+         font-size: 0.7rem;
+     }
+    .vote-title h2{
+        font-size: 0.9rem;
+    }
+    input{
+        width: 60%!important;
+    }
+    textarea{
+        margin-top: 2rem;
+        width: 100%!important;
+    }
+    .rdb{
+        width: 100%;
+        position: absolute;
+        bottom: 2rem;
+    }
+    .rdb-left{
+        float: left;
+        width: 40%;
+        margin-left: 9%;
+    }
+    .rdb-bg li{
+        font-size: 0.5rem;
+    }
+    .rdb-right{
+        float: left;
+        width: 40%;
+        margin-left: 7%;
+    }
+    .modal-size{
+        min-width: 0;
+        height: 31rem;
+        width:100%;
+    }
+    .hdjs-bg{
+        background: url(../img/ios.jpg) no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
     .content{
         background:url('../img/bg-mobile.jpg') no-repeat;
         -webkit-background-size: cover;
@@ -414,84 +444,149 @@ ul li{
 }
 
 @media only screen and (min-width: 320px) and (max-width: 359px){
-
+    .rdb-bg{
+        padding-top: 4rem;
+        height: 8.8rem;
+    }
+    .rdb{
+        bottom: 0;
+    }
+    .hdjs-bg{
+        height: 73rem;
+    }
+    .content{
+        width: 22rem;
+        height: 122rem;
+    }
+    .btns{
+        width: 5rem;
+        height: 2rem;
+        top: 25.5rem;
+    }
+    .wybm{
+        right: 14.5rem;
+    }
+    .wytp{
+        right: 8.5rem;
+    }
+    .hdjs{
+        right: 2.5rem;
+    }
+    .ljgd{
+        width: 3rem;
+        height: 2rem;
+        bottom: 13rem;
+        right: 2.5rem;
+    }
 }
 @media only screen and (min-width: 360px) and (max-width: 374px){
+    .rdb-bg{
+        padding-top: 4rem;
+        height: 8.8rem;
+    }
+    .hdjs-bg{
+        height: 73rem;
+    }
+    .content{
+        width: 22rem;
+        height: 126.5rem;
+    }
+    .btns{
+        width: 5.5rem;
+        height: 2rem;
+        top: 26.5rem;
+    }
+    .wybm{
+        right: 14.5rem;
+    }
+    .wytp{
+        right: 8rem;
+    }
+    .hdjs{
+        right: 2rem;
+    }
+    .ljgd{
+        width: 3rem;
+        height: 2rem;
+        bottom: 14rem;
+        right: 2rem;
+    }
 
 }
 @media only screen and (min-width: 375px) and (max-width: 413px){
+    .rdb-bg {
+        height: 9.4rem;
+        padding-top: 4.5rem;
+    }
+    .hdjs-bg{
+        height: 78rem;
+    }
     .content{
-        width: 26rem;
-        height: 143rem;
+        height: 130rem;
     }
     .btns{
-        width: 5.5rem;
-        height: 1.5rem;
-        top: 31.5rem;
+        width: 6rem;
+        height: 2rem;
+        top: 27.5rem;
     }
     .wybm{
-        right: 16rem;
+        right: 15.5rem;
     }
     .wytp{
-        right: 10rem;
+        right: 8.5rem;
     }
     .hdjs{
-        right: 4rem;
+        right: 2rem;
     }
     .ljgd{
         width: 3rem;
         height: 2rem;
-        background: red;
-        bottom: 15rem;
-        right: 3.5rem;
+        bottom: 14rem;
+        right: 3rem;
     }
-    .rdb{
-        width: 100%;
-        position: absolute;
-        bottom: 2rem;
-    }
-    .rdb-bg{
-        height: 10.4rem;
-        padding-top: 2rem;
-    }
+
 }
 @media only screen and (min-width: 414px) and (max-width: 415px){
+    .rdb-bg{
+        height: 10.4rem;
+        padding-top: 4.5rem;
+    }
+    .hdjs-bg{
+        height: 88rem;
+    }
     .content{
-        width: 26rem;
-        height: 143rem;
+        height: 142.5rem;
     }
     .btns{
-        width: 5.5rem;
-        height: 1.5rem;
-        top: 31.5rem;
+        width: 6rem;
+        height: 2rem;
+        top: 30.5rem;
     }
     .wybm{
-        right: 16rem;
+        right: 17rem;
     }
     .wytp{
         right: 10rem;
     }
     .hdjs{
-        right: 4rem;
+        right: 3rem;
     }
     .ljgd{
         width: 3rem;
         height: 2rem;
-        background: red;
         bottom: 15rem;
         right: 3.5rem;
     }
-    .rdb{
-        width: 100%;
-        position: absolute;
-        bottom: 2rem;
-    }
-    .rdb-bg{
-        height: 10.4rem;
-        padding-top: 2rem;
-    }
+
 }
 @media only screen and (min-width: 415px) {
+    .hdjs-bg{
+        background: url(../img/pc.jpg) no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
     .content{
         background:url('../img/bg.jpg') no-repeat;
         -webkit-background-size: cover;
@@ -508,28 +603,30 @@ ul li{
     }
 }
 @media only screen and (min-width: 415px) and (max-width: 1279px){
+    .hdjs-bg{
+        height: 165rem;
+    }
     .content{
         width: 64rem;
         height: 354rem;
     }
     .btns{
-        width: 13rem;
-        height: 4rem;
-        top: 77.5rem;
+        width: 15rem;
+        height: 4.5rem;
+        top: 75.5rem;
     }
     .wybm{
-        right: 40rem;
+        right: 42rem;
     }
     .wytp{
-        right: 26rem;
+        right: 25rem;
     }
     .hdjs{
-        right: 11rem;
+        right: 7rem;
     }
     .ljgd{
         width: 8rem;
         height: 5rem;
-        background: red;
         bottom: 39rem;
         right: 9rem;
     }
@@ -544,28 +641,30 @@ ul li{
     }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1365px) {
+    .hdjs-bg{
+        height: 185rem;
+    }
     .content{
         width: 80rem;
         height: 443rem;
     }
     .btns{
-        width: 17rem;
-        height: 5rem;
-        top: 97rem;
+        width: 18rem;
+        height: 6rem;
+        top: 94rem;
     }
     .wybm{
-        right: 50rem;
+        right: 53rem;
     }
     .wytp{
-        right: 32rem;
+        right: 31rem;
     }
     .hdjs{
-        right: 13rem;
+        right: 9rem;
     }
     .ljgd{
         width: 9rem;
         height: 6rem;
-        background: red;
         bottom: 49rem;
         right: 11rem;
     }
@@ -580,28 +679,30 @@ ul li{
     }
 }
 @media only screen and (min-width: 1366px) and (max-width: 1439px) {
+    .hdjs-bg{
+        height: 197rem;
+    }
     .content{
         width: 86rem;
         height: 476rem;
     }
     .btns{
-        width: 18rem;
-        height: 5.5rem;
-        top: 104rem;
+        width: 21rem;
+        height: 6rem;
+        top: 101rem;
     }
     .wybm{
-        right: 54rem;
+        right: 57rem;
     }
     .wytp{
-        right: 34rem;
+        right: 33rem;
     }
     .hdjs{
-        right: 14rem;
+        right: 9rem;
     }
     .ljgd{
         width: 9rem;
         height: 7rem;
-        background: red;
         bottom: 52rem;
         right: 12rem;
     }
@@ -616,28 +717,30 @@ ul li{
     }
 }
 @media only screen and (min-width: 1440px) and (max-width: 1679px){
+    .hdjs-bg{
+        height: 206rem;
+    }
     .content{
         width: 90rem;
         height: 498rem;
     }
     .btns{
-        width: 18rem;
-        height: 5.5rem;
-        top: 109rem;
+        width: 20rem;
+        height: 6rem;
+        top: 106rem;
     }
     .wybm{
-        right: 57rem;
+        right: 60rem;
     }
     .wytp{
-        right: 36rem;
+        right: 35rem;
     }
     .hdjs{
-        right: 15rem;
+        right: 10rem;
     }
     .ljgd{
         width: 9rem;
         height: 6.5rem;
-        background: red;
         bottom: 55rem;
         right: 13rem;
     }
@@ -652,28 +755,30 @@ ul li{
     }
 }
 @media only screen and (min-width: 1680px) and (max-width: 1919px) {
+    .hdjs-bg{
+        height: 206rem;
+    }
     .content{
         width: 105rem;
         height: 580rem;
     }
     .btns{
-        width: 21rem;
-        height: 6.5rem;
-        top: 127rem;
+        width: 25rem;
+        height: 7rem;
+        top: 124rem;
     }
     .wybm{
-        right: 66rem;
+        right: 69rem;
     }
     .wytp{
-        right: 42rem;
+        right: 40rem;
     }
     .hdjs{
-        right: 18rem;
+        right: 11rem;
     }
     .ljgd{
         width: 11rem;
         height: 8rem;
-        background: red;
         bottom: 63rem;
         right: 15rem;
     }
@@ -688,28 +793,30 @@ ul li{
     }
 }
 @media only screen and (min-width: 1920px){
+    .hdjs-bg{
+        height: 195rem;
+    }
     .content{
         width:120rem;
         height: 665rem;
     }
     .btns{
-        width:24rem;
+        width: 28rem;
         height: 8rem;
-        top: 145rem;
+        top: 142rem;
     }
     .wybm{
-        right: 76rem;
+        right: 79rem;
     }
     .wytp{
-        right: 48rem;
+        right: 46rem;
     }
     .hdjs{
-        right: 20rem;
+        right: 13rem;
     }
     .ljgd{
         width: 13rem;
         height: 10rem;
-        background: red;
         bottom: 73rem;
         right: 17rem;
     }

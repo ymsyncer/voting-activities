@@ -59,7 +59,8 @@
 <script src="js/modernizr.js"></script>
 <script src="js/webuploader.min.js"></script>
 <script>
-  var baseUrl="http://www.1roadshow.com/api/";
+  var baseUrl="http://118.190.76.178:8088/";
+  var signupid;
   getList();
   function getList(){
     $.ajax({
@@ -79,14 +80,14 @@
         for(var i = 0; i<tides.length; i++){
             var industry = tides[i];
             var tideNum=i+1;
-            var li = "<li><img class='vote-img' src="+industry.photo+"/><div class='vote-title'> <p>"+tideNum+"号作品</p><h2>"+industry.title+"</h2><p>"+"作者："+industry.name+"</p></div><div class='vote-box'>"+industry.details+"</div><div class='text-center'> <button userid="+industry.userid+" signupid="+industry.signupid+" id='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
+            var li = "<li><img class='vote-img' src="+industry.photo+"/><div class='vote-title'> <p>"+tideNum+"号作品</p><h2>"+industry.title+"</h2><p>"+"作者："+industry.name+"</p></div><div class='vote-box'>"+industry.details+"</div><div class='text-center'> <button userid="+industry.userid+" signupid="+industry.signupid+"  name='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
             $("#tide").append(li);
           }
         var cars = data.car;
         for(var i = 0; i<cars.length; i++){
           var industrys = cars[i];
           var cartNum=i+1;
-          var li = "<li><img class='vote-img' src="+industrys.photo+"/><div class='vote-title'> <p>"+cartNum+"号作品</p><h2>"+industrys.title+"</h2><p>"+"作者："+industrys.name+"</p></div><div class='vote-box'>"+industrys.details+"</div><div class='text-center'> <button userid="+industrys.userid+" signupid="+industrys.signupid+" id='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
+          var li = "<li><img class='vote-img' src="+industrys.photo+"/><div class='vote-title'> <p>"+cartNum+"号作品</p><h2>"+industrys.title+"</h2><p>"+"作者："+industrys.name+"</p></div><div class='vote-box'>"+industrys.details+"</div><div class='text-center'> <button userid="+industrys.userid+" signupid="+industrys.signupid+"  name='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
           $("#cars").append(li);
         }
       },
@@ -103,8 +104,9 @@
       }
     });
   })
-  $(document).on("click", "#voteBtn", function () {
+  $(document).on("click", "button[name='voteBtn']", function () {
     $('#formModal').foundation('reveal', 'open');
+       signupid=$(this).attr("signupid")
   });
 
   // 提交
@@ -120,13 +122,11 @@
       alert("验证码不能为空")
       return
     }
-    var signupid=$("#voteBtn").attr("signupid");
-    var userid=$("#voteBtn").attr("userid")
     $.ajax({
       type:'post',
       url:baseUrl+"rest/vote",
       data:{
-        userid:userid,
+        userid:number,
         number:number,
         signupid:signupid,
         code:code,

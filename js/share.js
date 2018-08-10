@@ -1,22 +1,23 @@
-var baseUrl="http://118.190.76.178:8088/";
-// var link = encodeURIComponent(location.href);
-var link = location.href
+var baseUrls="http://118.190.76.178:8088/";
+var link = location.href;
 $.ajax({
-    url:baseUrl,
-    type:"GET",
+    url:baseUrls+"share/GETJSSDK",
+    type:"get",
     data:{"url":link},
     async:true,
     dataType:"json",
     success:function (data){
+        var data=JSON.parse(data.returnValue);
         wx.config({
             debug: false,
-            appId: data.configMap.appId,
-            timestamp: data.configMap.timestamp,
-            nonceStr: data.configMap.nonceStr,
-            signature: data.configMap.signature,
+            appId: data.appId,
+            timestamp: data.timestamp,
+            nonceStr: data.nonceStr,
+            signature: data.signature,
             jsApiList: [
                 "onMenuShareTimeline",
-                "onMenuShareAppMessage"
+                "onMenuShareAppMessage",
+                "onMenuShareWeibo"
             ]
         });
         wx.error(function (res) {

@@ -3,13 +3,14 @@
 <head >
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
-    <title>首页</title>
+    <title>东风日产蓝鸟设计大赛</title>
     <link rel="stylesheet" href="css/webuploader.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body style="background: rgba(0,0,0,0.8);">
+<img src="img/title.png" style="display: none;">
 <div class="vote-content">
     <div class="closeBtn" id="closeAll">X</div>
     <div class="row">
@@ -78,11 +79,11 @@
         }
         var tides = data.tide;
         for(var i = 0; i<tides.length; i++){
-            var industry = tides[i];
-            var tideNum=i+1;
-            var li = "<li><img class='vote-img' src="+industry.photo+"/><div class='vote-title'> <p>"+tideNum+"号作品</p><h2>"+industry.title+"</h2><p>"+"作者："+industry.name+"</p></div><div class='vote-box'>"+industry.details+"</div><div class='text-center'> <button userid="+industry.userid+" signupid="+industry.signupid+"  name='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
-            $("#tide").append(li);
-          }
+          var industry = tides[i];
+          var tideNum=i+1;
+          var li = "<li><img class='vote-img' src="+industry.photo+"/><div class='vote-title'> <p>"+tideNum+"号作品</p><h2>"+industry.title+"</h2><p>"+"作者："+industry.name+"</p></div><div class='vote-box'>"+industry.details+"</div><div class='text-center'> <button userid="+industry.userid+" signupid="+industry.signupid+"  name='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
+          $("#tide").append(li);
+        }
         var cars = data.car;
         for(var i = 0; i<cars.length; i++){
           var industrys = cars[i];
@@ -106,7 +107,7 @@
   })
   $(document).on("click", "button[name='voteBtn']", function () {
     $('#formModal').foundation('reveal', 'open');
-       signupid=$(this).attr("signupid")
+    signupid=$(this).attr("signupid")
   });
 
   // 提交
@@ -141,7 +142,7 @@
           alert(data.errors[0])
           return
         }
-       alert("投票成功");
+        alert("投票成功");
         $('#formModal').foundation('reveal', 'close');
 
       },

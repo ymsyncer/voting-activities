@@ -3,67 +3,68 @@
 <head >
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
-    <title>首页</title>
+    <title>东风日产蓝鸟设计大赛</title>
     <link rel="stylesheet" href="css/webuploader.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body style="background: rgba(0,0,0,0.8);overflow-x: hidden;">
+<img src="img/title.png" style="display: none;">
 <div class="content">
     <a href="javascript:void(0)" id="signUp" class="btns wybm"></a>
     <a href="javascript:void(0)" class="btns wytp" id="votes"></a>
     <a href="javascript:void(0)" data-reveal-id="subModal"  class="btns hdjs"></a>
     <a href="https://www.dongfeng-nissan.com.cn/car/lannia" class="ljgd"></a>
     <!--<div class="rdb">-->
-        <!--<div class="rdb-bg">-->
-            <!--<div class="clearfix">-->
-                <!--<ul class="rdb-left">-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                <!--</ul>-->
-                <!--<ul class="rdb-right">-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                    <!--<li class="clearfix">-->
-                        <!--<span class="left">16号作品</span>-->
-                        <!--<span class="right">128239票</span>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--<div class="rdb-bg">-->
+    <!--<div class="clearfix">-->
+    <!--<ul class="rdb-left">-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--<ul class="rdb-right">-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--<li class="clearfix">-->
+    <!--<span class="left">16号作品</span>-->
+    <!--<span class="right">128239票</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
 </div>
 <!--活动介绍-->
@@ -130,210 +131,210 @@
 <script src="js/modernizr.js"></script>
 <script src="js/webuploader.min.js"></script>
 <script>
-    var baseUrl="http://118.190.76.178:8088/";
-    var uploadUrl = "http://118.190.76.178:8080/image-server/uploadImage?mediaType=Picture&module=L";
-    var imgUrl="http://118.190.76.178:8080/image-server/imageThumbnail?relUrl="
-    var groups, photo;
-    $(document).ready(function() {
-        $(document).foundation({
-            reveal: {
-                close_on_background_click: false,
-                close_on_esc: false
-            }
-        });
-    })
-    // 上传
-    jQuery(function () {
-        var $ = jQuery,
-            // 优化retina, 在retina下这个值是2
-            ratio = window.devicePixelRatio || 1,
-            // 缩略图大小
-            thumbnailWidth = 100 * ratio,
-            thumbnailHeight = 100 * ratio,
-            // Web Uploader实例
-            uploader;
-        // 初始化Web Uploader
-        uploader = WebUploader.create({
-            // 自动上传。
-            auto: true,
-            // 文件接收服务端。
-            server: uploadUrl,
-            // 选择文件的按钮。可选。
-            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-            pick: '#filePicker',
-            // 只允许选择文件，可选。
-            accept: {
-                title: 'Images',
-                extensions: 'gif,jpg,jpeg,bmp,png',
-                mimeTypes: 'image/*'
-            }
-        });
-        // 文件上传过程中创建进度条实时显示。
-        uploader.on('uploadProgress', function (file, percentage) {
-            // alert("作品正在上传")
-        });
-        // 文件上传成功
-        uploader.on('uploadSuccess', function (file, response) {
-            photo=imgUrl+response._raw;
-            alert("作品上传成功")
-        });
-        // 文件上传失败，现实上传出错。
-        uploader.on('uploadError', function (file) {
-            alert("作品上传失败")
-        });
+  var baseUrl="http://118.190.76.178:8088/";
+  var uploadUrl = "http://118.190.76.178:8080/image-server/uploadImage?mediaType=Picture&module=L";
+  var imgUrl="http://118.190.76.178:8080/image-server/imageThumbnail?relUrl="
+  var groups, photo;
+  $(document).ready(function() {
+    $(document).foundation({
+      reveal: {
+        close_on_background_click: false,
+        close_on_esc: false
+      }
     });
-    // 下拉
-    function DropDown(el) {
-        this.dd   = el;
-        this.span = this.dd.children('span');
-        this.li   = this.dd.find('ul.dropdown li');
-        this.val  = '';
-    }
-    DropDown.prototype.initEvents = function() {
-        var obj = this;
-        obj.dd.on('click', function(event){
-            $(this).toggleClass('active').siblings().removeClass('active');
-            event.stopPropagation();
-        });
-        obj.li.on('click', function() {
-            var opt = $(this);
-            obj.val = opt.html();
-            if (obj.span.html() == obj.val) return;
-            obj.span.html(obj.val);
-            groups=obj.val;
-            $(document).click(function() {
-                $('.select-btn').removeClass('active');
-            });
-        })
-    }
-    new DropDown($('#type')).initEvents();
-    // 提交
-    $("#submit").click(function () {
-        var name=$("#name").val();
-        var title=$("#title").val();
-        var number=$("#number").val();
-        var details=$("#details").val();
-       var code=$("#code").val();
-        if (name == ""||name==undefined) {
-            alert("姓名不能为空")
-            return
-        }
-        if (title == ""||title==undefined) {
-            alert("作品名称不能为空")
-            return
-        }
-        if (number == ""||number==undefined) {
-            alert("联系电话不能为空")
-            return
-        }
-      var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
-      if(!myreg.test(number))
-      {
-        alert('请输入有效的手机号码！');
+  })
+  // 上传
+  jQuery(function () {
+    var $ = jQuery,
+        // 优化retina, 在retina下这个值是2
+        ratio = window.devicePixelRatio || 1,
+        // 缩略图大小
+        thumbnailWidth = 100 * ratio,
+        thumbnailHeight = 100 * ratio,
+        // Web Uploader实例
+        uploader;
+    // 初始化Web Uploader
+    uploader = WebUploader.create({
+      // 自动上传。
+      auto: true,
+      // 文件接收服务端。
+      server: uploadUrl,
+      // 选择文件的按钮。可选。
+      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+      pick: '#filePicker',
+      // 只允许选择文件，可选。
+      accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/*'
       }
-
-      if (code == ""||code==undefined) {
-        alert("验证码不能为空")
-        return
-      }
-        if (groups == ""||groups==undefined) {
-            alert("请选择组别")
-            return
-        }
-        if (photo == ""||photo==undefined) {
-            alert("请上传作品")
-            return
-        }
-        if (details == ""||details==undefined) {
-            alert("作品描述不能为空")
-            return
-        }
-        $.ajax({
-            type:'get',
-            url:baseUrl+"rest/signUp",
-            data:{
-              title:title,
-              name:name,
-              photo:photo,
-              number:number,
-              groups:groups,
-              details:details,
-              code:code,
-              type:1
-            },
-            cache:false,
-            dataType:'json',
-            success:function(data){
-              if (!data.success) {
-                alert(data.errors[0])
-                return
-              }
-                $("#successMessage").show();
-                $("#messageContent").hide();
-            },
-            error:function (error) {
-                $("#ErrorMessage").show();
-                $("#messageContent").hide();
-            }
-        });
-    })
-    $("#signUp").click(function () {
-      $('#formModal').foundation('reveal', 'open');
-    })
-    $("#votes").click(function () {
-      location.href="voteList.html"
-    })
-    $("#codeBtn").click(function () {
-      var mobile=$("#number").val()
-      if (mobile == ""||mobile==undefined) {
-        alert("请输入手机号")
-        return
-      }
-      var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
-      if(!myreg.test(mobile))
-      {
-        alert('请输入有效的手机号码！');
-        return
-      }
-      $.ajax({
-        type:'get',
-        url:baseUrl+"sms/send/"+mobile+"/"+"1",
-        cache:false,
-        dataType:'json',
-        success:function(data){
-
-        }
+    });
+    // 文件上传过程中创建进度条实时显示。
+    uploader.on('uploadProgress', function (file, percentage) {
+      // alert("作品正在上传")
+    });
+    // 文件上传成功
+    uploader.on('uploadSuccess', function (file, response) {
+      photo=imgUrl+response._raw;
+      alert("作品上传成功")
+    });
+    // 文件上传失败，现实上传出错。
+    uploader.on('uploadError', function (file) {
+      alert("作品上传失败")
+    });
+  });
+  // 下拉
+  function DropDown(el) {
+    this.dd   = el;
+    this.span = this.dd.children('span');
+    this.li   = this.dd.find('ul.dropdown li');
+    this.val  = '';
+  }
+  DropDown.prototype.initEvents = function() {
+    var obj = this;
+    obj.dd.on('click', function(event){
+      $(this).toggleClass('active').siblings().removeClass('active');
+      event.stopPropagation();
+    });
+    obj.li.on('click', function() {
+      var opt = $(this);
+      obj.val = opt.html();
+      if (obj.span.html() == obj.val) return;
+      obj.span.html(obj.val);
+      groups=obj.val;
+      $(document).click(function() {
+        $('.select-btn').removeClass('active');
       });
     })
-    //倒计时
-    var countdown=60;
-    function settime(val) {
-      var mobile=$("#number").val()
-      if (mobile == ""||mobile==undefined) {
-        return
-      }
-      var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
-      if(!myreg.test(mobile))
-      {
-        return
-      }
-      if (countdown == 0) {
-        val.removeAttribute("disabled");
-        val.value="获取验证码";
-        countdown = 60;
-        return false;
-      } else {
-        val.setAttribute("disabled", true);
-        val.value="重新发送(" + countdown + ")";
-        countdown--;
-      }
-      setTimeout(function() {
-        settime(val);
-      },1000);
+  }
+  new DropDown($('#type')).initEvents();
+  // 提交
+  $("#submit").click(function () {
+    var name=$("#name").val();
+    var title=$("#title").val();
+    var number=$("#number").val();
+    var details=$("#details").val();
+    var code=$("#code").val();
+    if (name == ""||name==undefined) {
+      alert("姓名不能为空")
+      return
     }
-    $("#back").click(function () {
-      $('#formModal').foundation('reveal', 'close');
-    })
+    if (title == ""||title==undefined) {
+      alert("作品名称不能为空")
+      return
+    }
+    if (number == ""||number==undefined) {
+      alert("联系电话不能为空")
+      return
+    }
+    var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+    if(!myreg.test(number))
+    {
+      alert('请输入有效的手机号码！');
+    }
+
+    if (code == ""||code==undefined) {
+      alert("验证码不能为空")
+      return
+    }
+    if (groups == ""||groups==undefined) {
+      alert("请选择组别")
+      return
+    }
+    if (photo == ""||photo==undefined) {
+      alert("请上传作品")
+      return
+    }
+    if (details == ""||details==undefined) {
+      alert("作品描述不能为空")
+      return
+    }
+    $.ajax({
+      type:'get',
+      url:baseUrl+"rest/signUp",
+      data:{
+        title:title,
+        name:name,
+        photo:photo,
+        number:number,
+        groups:groups,
+        details:details,
+        code:code,
+        type:1
+      },
+      cache:false,
+      dataType:'json',
+      success:function(data){
+        if (!data.success) {
+          alert(data.errors[0])
+          return
+        }
+        $("#successMessage").show();
+        $("#messageContent").hide();
+      },
+      error:function (error) {
+        $("#ErrorMessage").show();
+        $("#messageContent").hide();
+      }
+    });
+  })
+  $("#signUp").click(function () {
+    $('#formModal').foundation('reveal', 'open');
+  })
+  $("#votes").click(function () {
+    location.href="voteList.html"
+  })
+  $("#codeBtn").click(function () {
+    var mobile=$("#number").val()
+    if (mobile == ""||mobile==undefined) {
+      alert("请输入手机号")
+      return
+    }
+    var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+    if(!myreg.test(mobile))
+    {
+      alert('请输入有效的手机号码！');
+      return
+    }
+    $.ajax({
+      type:'get',
+      url:baseUrl+"sms/send/"+mobile+"/"+"1",
+      cache:false,
+      dataType:'json',
+      success:function(data){
+
+      }
+    });
+  })
+  //倒计时
+  var countdown=60;
+  function settime(val) {
+    var mobile=$("#number").val()
+    if (mobile == ""||mobile==undefined) {
+      return
+    }
+    var myreg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+    if(!myreg.test(mobile))
+    {
+      return
+    }
+    if (countdown == 0) {
+      val.removeAttribute("disabled");
+      val.value="获取验证码";
+      countdown = 60;
+      return false;
+    } else {
+      val.setAttribute("disabled", true);
+      val.value="重新发送(" + countdown + ")";
+      countdown--;
+    }
+    setTimeout(function() {
+      settime(val);
+    },1000);
+  }
+  $("#back").click(function () {
+    $('#formModal').foundation('reveal', 'close');
+  })
 </script>
 </body>
 </html>

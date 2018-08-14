@@ -1,9 +1,9 @@
-var baseUrls="http://118.190.76.178:8088/";
+﻿var baseUrls="http://118.190.76.178:8088/";
 var link = location.href;
 $.ajax({
     url:baseUrls+"share/GETJSSDK",
     type:"get",
-    data:{"url":link},
+    data:{"url":link.split('#')[0]},
     async:true,
     dataType:"json",
     success:function (data){
@@ -12,7 +12,7 @@ $.ajax({
             debug: false,
             appId: data.appId,
             timestamp: data.timestamp,
-            nonceStr: data.nonceStr,
+            nonceStr: data.noncestr,
             signature: data.signature,
             jsApiList: [
                 "onMenuShareTimeline",
@@ -28,7 +28,7 @@ $.ajax({
         console.log(error);
     }
 });
-var imgUrl="../img/title.png",title="东风日产蓝鸟设计大赛",desc="立即报名，赢取丰富礼品！"
+var imgUrl=$("#imgIcon").attr("src"),title="东风日产蓝鸟设计大赛",desc="立即报名，赢取丰富礼品！"
 wx.ready(function(res) {
     wx.onMenuShareAppMessage({
         title: title,

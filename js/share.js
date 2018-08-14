@@ -28,13 +28,13 @@ $.ajax({
         console.log(error);
     }
 });
-var imgUrl=$("#imgIcon").attr("src"),title="东风日产蓝鸟设计大赛",desc="立即报名，赢取丰富礼品！"
+var title="东风日产蓝鸟设计大赛",desc="立即报名，赢取丰富礼品！"
 wx.ready(function(res) {
     wx.onMenuShareAppMessage({
         title: title,
         desc:desc,
         link: link,
-        imgUrl: imgUrl,
+        imgUrl: "http://www.1roadshow.com/img/title.png",
         success: function(res) {},
         cancel: function(res) {}
     });

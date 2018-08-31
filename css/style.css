@@ -24,7 +24,7 @@ body, h1, h2, h3, h4, h5, h6, button, .button{
     position: absolute;
     top: 2rem;
     right: 5rem;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
     font-style: normal;
 }
@@ -46,7 +46,6 @@ body, h1, h2, h3, h4, h5, h6, button, .button{
     background: #f8b100;
     border-radius: 2px;
 }
-
 @font-face {
     font-family: 'hyg1gjm';
     src: url('font/hyg1gjm.eot'); /* IE9 Compat Modes */
@@ -296,6 +295,10 @@ ul li{
     border-style: dashed;
     margin: 0 auto;
 }
+.vot-box-message li{
+    width: 33.33%;
+    float: left;
+}
 .vote-btn{
     background: #f8b100;
     color: black;
@@ -352,6 +355,20 @@ ul li{
     -o-background-size: cover;
     background-size: cover;
 }
+.rdb-bg ul{
+    margin: 10px 0 0 0;
+}
+.border{
+    border: 1px solid #f8b100;
+    width: 100%
+}
+.rdb-bg h1{
+    text-align: center;
+    color: #f8b100;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
 .rdb-left{
     float: left;
     width: 29%;
@@ -377,6 +394,15 @@ ul li{
     height: 195rem;
 }
 @media only screen and (max-width: 415px){
+    .vot-box-message li{
+        width: 100%;
+    }
+    .rdb-bg h1{
+        font-size: .7rem;
+    }
+    .rdb-bg ul {
+        margin: 5px 0 0 0;
+    }
     .vote-img {
         width: 4rem;
         height: 4rem;
@@ -404,7 +430,7 @@ ul li{
     .rdb{
         width: 100%;
         position: absolute;
-        bottom: 2rem;
+        bottom: -3rem;
     }
     .rdb-left{
         float: left;
@@ -439,7 +465,7 @@ ul li{
         background-size: cover;
     }
     .rdb-bg{
-        background:url('../img/redubang-mobile.png') no-repeat;
+        background:url('../img/rdb2.png') no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -449,11 +475,8 @@ ul li{
 
 @media only screen and (min-width: 320px) and (max-width: 359px){
     .rdb-bg{
-        padding-top: 4rem;
-        height: 8.8rem;
-    }
-    .rdb{
-        bottom: 0;
+        padding-top: 1.5rem;
+        height: 10.3rem;
     }
     .hdjs-bg{
         height: 73rem;
@@ -485,8 +508,8 @@ ul li{
 }
 @media only screen and (min-width: 360px) and (max-width: 374px){
     .rdb-bg{
-        padding-top: 4rem;
-        height: 8.8rem;
+        padding-top: 1.5rem;
+        height: 10.3rem;
     }
     .hdjs-bg{
         height: 73rem;
@@ -515,12 +538,14 @@ ul li{
         bottom: 14rem;
         right: 2rem;
     }
-
 }
 @media only screen and (min-width: 375px) and (max-width: 413px){
     .rdb-bg {
-        height: 9.4rem;
-        padding-top: 4.5rem;
+        height: 11rem;
+        padding-top:1.5rem;
+    }
+    .rdb-bg li{
+        font-size: .5rem;
     }
     .hdjs-bg{
         height: 78rem;
@@ -552,8 +577,11 @@ ul li{
 }
 @media only screen and (min-width: 414px) and (max-width: 415px){
     .rdb-bg{
-        height: 10.4rem;
-        padding-top: 4.5rem;
+        height:12.2rem;
+        padding-top: 1.5rem;
+    }
+    .rdb-bg li{
+        font-size: .4rem;
     }
     .hdjs-bg{
         height: 88rem;
@@ -581,9 +609,11 @@ ul li{
         bottom: 15rem;
         right: 3.5rem;
     }
-
 }
 @media only screen and (min-width: 415px) {
+    .rdb{
+        bottom: 0;
+    }
     .hdjs-bg{
         background: url(../img/pc.jpg) no-repeat;
         -webkit-background-size: cover;
@@ -609,6 +639,9 @@ ul li{
 @media only screen and (min-width: 415px) and (max-width: 1279px){
     .hdjs-bg{
         height: 165rem;
+    }
+    .rdb-bg ul{
+        margin: 5px 0 0 0;
     }
     .content{
         width: 64rem;
@@ -641,7 +674,10 @@ ul li{
     }
     .rdb-bg{
         height: 25.6rem;
-        padding-top: 12rem;
+        padding-top: 5rem;
+    }
+    .rdb-bg li{
+        font-size: 1rem;
     }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1365px) {
@@ -675,11 +711,14 @@ ul li{
     .rdb{
         width: 100%;
         position: absolute;
-        bottom: 12rem;
+        bottom: 8rem;
     }
     .rdb-bg{
         height: 32rem;
-        padding-top: 18rem;
+        padding-top: 7rem;
+    }
+    .rdb-bg li{
+        font-size: 1.2rem;
     }
 }
 @media only screen and (min-width: 1366px) and (max-width: 1439px) {
@@ -713,11 +752,14 @@ ul li{
     .rdb{
         width: 100%;
         position: absolute;
-        bottom: 12rem;
+        bottom: 9rem;
     }
     .rdb-bg{
         height: 34.4rem;
-        padding-top: 18rem;
+        padding-top: 8rem;
+    }
+    .rdb-bg li{
+        font-size: 1.2rem;
     }
 }
 @media only screen and (min-width: 1440px) and (max-width: 1679px){
@@ -755,7 +797,10 @@ ul li{
     }
     .rdb-bg{
         height: 36rem;
-        padding-top: 18rem;
+        padding-top: 8rem;
+    }
+    .rdb-bg li{
+        font-size: 1.3rem;
     }
 }
 @media only screen and (min-width: 1680px) and (max-width: 1919px) {
@@ -793,7 +838,7 @@ ul li{
     }
     .rdb-bg{
         height: 42rem;
-        padding-top: 22rem;
+        padding-top: 9rem;
     }
 }
 @media only screen and (min-width: 1920px){
@@ -831,6 +876,6 @@ ul li{
     }
     .rdb-bg{
         height: 48rem;
-        padding-top: 25rem;
+        padding-top: 12rem;
     }
 }

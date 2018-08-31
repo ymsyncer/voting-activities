@@ -13,6 +13,9 @@
 <img src="img/title.png" id="imgIcon" style="display: none;">
 <div class="vote-content">
     <div class="closeBtn" id="closeAll">X</div>
+    <div class="row text-center ">
+        <h1 style="margin-bottom: -2.5rem;">入围奖</h1>
+    </div>
     <div class="row">
         <div class="medium-6 columns">
             <h1>潮品组</h1>
@@ -28,6 +31,74 @@
         </div>
 
     </div>
+    <div class="row text-center ">
+        <h1 style="margin: -7rem 0 2rem 0;">参与奖</h1>
+    </div>
+    <ul class="vote-box vot-box-message text-center clearfix">
+        <li>
+            王欣 182xxxx1631
+        </li>
+        <li>
+            杨海滨 151xxxx3358
+        </li>
+        <li>
+            酷哥乔 186xxxx9211
+        </li>
+        <li>
+            张小豪 135xxxx2121
+        </li>
+        <li>
+            李影 135xxxx8308
+        </li>
+        <li>
+            刘志强 182xxxx9512
+        </li>
+        <li>
+            郭卓选 183xxxx8220
+        </li>
+        <li>
+            赵先生 181xxxx8502
+        </li>
+        <li>
+            侯琼琼 187xxxx0310
+        </li>
+        <li>
+            卞林豪 138xxxx4309
+        </li>
+        <li>
+            陈婕蕾 159xxxx0624
+        </li>
+        <li>
+            覃嘉豪 180xxxx2456
+        </li>
+        <li>
+            孝康 186xxxx4792
+        </li>
+        <li>
+            孙旭 176xxxx0277
+        </li>
+        <li>
+            徐嘉宁 159xxxx5992
+        </li>
+        <li>
+            膨胀女孩138xxxx3687
+        </li>
+        <li>
+            邢晨曦 150xxxx9313
+        </li>
+        <li>
+            吴婷婷 136xxxx5729
+        </li>
+        <li>
+            王瑞雄 185xxxx5400
+        </li>
+        <li>
+            王大雄 183xxxx1357
+        </li>
+        <li>
+            冯健 136xxxx7887
+        </li>
+    </ul>
 </div>
 <!--表单-->
 <div id="formModal" class="reveal-modal reveal-modals title-size"  data-reveal >
@@ -68,29 +139,21 @@
   function getList(){
     $.ajax({
       type:'get',
-      url:baseUrl+"rest/list",
+      url:baseUrl+"rest/ranking?page=10",
       cache:false,
       dataType:'json',
       success:function(data){
-        if (!data.success) {
-          alert(data.errors[0])
-          return
-        }
-        if (data.tide.length == 0 && data.car.length == 0) {
-          alert("暂无数据")
-        }
-        var tides = data.tide;
+          var data=JSON.parse(data.returnValue);
+        var tides = data.chao;
         for(var i = 0; i<tides.length; i++){
           var industry = tides[i];
-          var tideNum=i+1;
-          var li = "<li><img class='vote-img' src="+industry.photo+"/><div class='vote-title'> <p>"+tideNum+"号作品</p><h2>"+industry.title+"</h2><p>"+"作者："+industry.name+"</p></div><div class='vote-box'>"+industry.details+"</div><div class='text-center'> <button userid="+industry.userid+" signupid="+industry.signupid+"  name='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
+          var li = "<li><img class='vote-img' src="+industry.photo+"/><div class='vote-title'> <p>"+industry.signupid+"号作品</p><h2>"+industry.title+"</h2><p>"+"作者："+industry.name+"</p></div><div class='vote-box'>"+industry.details+"</div><div class='text-center'> <button userid="+industry.userid+" signupid="+industry.signupid+"  name='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
           $("#tide").append(li);
         }
-        var cars = data.car;
+        var cars = data.che;
         for(var i = 0; i<cars.length; i++){
-          var industrys = cars[i];
-          var cartNum=i+1;
-          var li = "<li><img class='vote-img' src="+industrys.photo+"/><div class='vote-title'> <p>"+cartNum+"号作品</p><h2>"+industrys.title+"</h2><p>"+"作者："+industrys.name+"</p></div><div class='vote-box'>"+industrys.details+"</div><div class='text-center'> <button userid="+industrys.userid+" signupid="+industrys.signupid+"  name='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
+            var industrys = cars[i];
+          var li = "<li><img class='vote-img' src="+industrys.photo+"/><div class='vote-title'> <p>"+industrys.signupid+"号作品</p><h2>"+industrys.title+"</h2><p>"+"作者："+industrys.name+"</p></div><div class='vote-box'>"+industrys.details+"</div><div class='text-center'> <button userid="+industrys.userid+" signupid="+industrys.signupid+"  name='voteBtn' class='vote-btn radius'>投Ta一票</button></div></li>";
           $("#cars").append(li);
         }
       },
